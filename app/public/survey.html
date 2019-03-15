@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+</head>
+<body>
+
+        <div> <h1>Survery Questions</h1></div>
+
+        <hr>
+    
+        <div id="aboutQ">
+    
+            <div class="input-field col s6">
+                    <input value="" id="first_name2" type="text" class="validate">
+                    <label id="userName" class="active" for="first_name2">First Name</label>
+                    <form action="#">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                <span id="userPhoto">Profile Pic</span>
+                                <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                            </form>
+            </div>
+    
+            <hr>
+    
+                <div class="question">
+                    <div id="question1">
+                        <p>Your always full of new ideas</p>
+                        <label>question1</label>
+                            <select class="browser-default">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                </div>
+    
+                <div class="input-field col s12">
+                    <div class="question2">     
+                        <p>Is it often difficult for you to relate to others feelings</p>
+                        <label>question2</label>
+                        <select class="browser-default">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        </div>
+                </div>
+
+                <div class="input-field col s12">
+                    <div class="question3">     
+                        <p>People rarley upset you</p>
+                        <label>question2</label>
+                        <select class="browser-default">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        </div>
+                </div>                
+
+                      <button id="submitButton" class="btn waves-effect waves-light" type="submit" name="action">Submit
+                      </button>
+            </div>
+        </div>
+                          
+    
+        </div>
+    
+    <script src="main.js">
+        $(document).ready(funciton() {
+            $('select').material_select();
+
+            
+        });
+
+        $('#submitButton').on('click', function(event) {
+            event.preventDefault();
+
+            var userInput = {
+                name: $('#userName').val().trim(),
+                photo: $('#userPhoto').val().trim(),
+                results:[$('#question1').val().trim(),
+                          ('#question2').val().trim(),
+                          ('#question3').val().trim()]
+            }
+        });
+    </script>
+
+</body>
+</html>
